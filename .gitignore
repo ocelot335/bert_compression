@@ -3,7 +3,7 @@ checkpoints/*
 logs/*
 !logs/.gitkeep
 
-data/
+/data/
 *.cache
 
 __pycache__/
