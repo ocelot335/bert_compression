@@ -1,0 +1,18 @@
+defaults:
+  - baseline
+  - _self_
+
+experiment:
+  name: "debug_run"
+
+training:
+  num_epochs: 1
+  batch_size: 4
+  max_steps: 10
+  eval_steps: 5
+  save_steps: 10
+  fp16: false
+  warmup_ratio: 0.0
+
+paths:
+  output_dir: "checkpoints/debug"

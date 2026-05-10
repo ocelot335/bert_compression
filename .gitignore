@@ -2,6 +2,8 @@ checkpoints/*
 !checkpoints/.gitkeep
 logs/*
 !logs/.gitkeep
+outputs/*
+!outputs/.gitkeep
 
 /data/
 *.cache

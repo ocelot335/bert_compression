@@ -1,6 +1,8 @@
 defaults:
   - _self_
 
+method: "teacher"
+
 experiment:
   name: "teacher_finetuned"
   seed: 42
@@ -14,22 +16,23 @@ data:
   max_length: 128
 
 training:
-  num_epochs: 3
+  num_epochs: 4
   batch_size: 16
+  max_steps: -1
   learning_rate: 2.0e-5
   weight_decay: 0.01
   warmup_ratio: 0.1
   fp16: true
   gradient_clip: 1.0
   eval_steps: 200
-  save_steps: 500
+  save_steps: 400
 
 paths:
   output_dir: "checkpoints/teacher_finetuned"
 
 hub:
   push_to_hub: false
-  repo_id: "ocelot335/bert-ner-teacher"
+  repo_id: "ocecrot/bert-compression-ner"
 
 comet:
   enabled: true

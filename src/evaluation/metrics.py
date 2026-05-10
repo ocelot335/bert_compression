@@ -82,3 +82,14 @@ def _convert_to_label_strings(
         true_label_strings.append(true_sent)
 
     return pred_label_strings, true_label_strings
+
+
+def make_compute_metrics():
+    def compute_metrics(eval_pred) -> dict[str, float]:
+        import numpy as np
+
+        logits, labels = eval_pred
+        predictions = np.argmax(logits, axis=-1)
+        return compute_ner_metrics(predictions, labels)
+
+    return compute_metrics
