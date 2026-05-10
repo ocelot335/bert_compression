@@ -2,7 +2,6 @@ from datasets import DatasetDict, load_dataset
 from loguru import logger
 from omegaconf import DictConfig
 
-
 LABEL_NAMES = [
     "O",
     "B-PER",
@@ -31,7 +30,7 @@ def load_conll2003(cfg: DictConfig) -> DatasetDict:
     """
     logger.info(f"Loading dataset: {cfg.dataset_name}")
 
-    dataset = load_dataset(cfg.dataset_name)
+    dataset = load_dataset(cfg.dataset_name, revision="convert/parquet")
     dataset = dataset.remove_columns(["id", "pos_tags", "chunk_tags"])
 
     logger.info(
